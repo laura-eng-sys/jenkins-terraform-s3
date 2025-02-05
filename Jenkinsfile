@@ -16,7 +16,7 @@ pipeline {
         stage('Initializing s3'){
             steps{
                 script{
-                    dir('modules/s3-creation'){
+                    dir('s3-creation'){
                          sh 'terraform init'
                     }
                 }
@@ -25,7 +25,7 @@ pipeline {
         stage('Validating s3'){
             steps{
                 script{
-                    dir('modules/s3-creation'){
+                    dir('s3-creation'){
                          sh 'terraform validate'
                     }
                 }
@@ -34,7 +34,7 @@ pipeline {
         stage('terraform plan s3'){
             steps{
                 script{
-                    dir('modules/s3-creation'){
+                    dir('s3-creation'){
                          sh 'terraform plan'
                     }
                 }
@@ -43,7 +43,7 @@ pipeline {
          stage('terraform apply s3'){
             steps{
                 script{
-                    dir('modules/s3-creation'){
+                    dir('s3-creation'){
                          sh 'terraform apply --auto-approve'
                     }
                 }
