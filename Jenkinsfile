@@ -13,7 +13,6 @@ pipeline {
                 }
             }
         }
-    }
         stage('Initializing s3'){
             steps{
                 script{
@@ -50,4 +49,5 @@ pipeline {
                 }
             }
         }
+    }
 }
